@@ -1,0 +1,19 @@
+<h2>Todo DashBoard</h2>
+<p-dataList [value]="todos" [rows]="5" paginator="true">
+  <p-header>
+    List of Todos
+  </p-header>
+  <ng-template let-todo pTemplate="item">
+      <div class="ui-g ui-fluid">
+          <div class="ui-g-12 ui-md-3" style="text-align:center">
+              {{todo.id}}
+          </div>
+          <div class="ui-g-12 ui-md-9">
+              <div class="ui-g">
+                  <div class="ui-g-2 ui-sm-6">Title: </div>
+                  <div class="ui-g-10 ui-sm-6">{{todo.title}}</div>
+              </div>
+          </div>
+      </div>
+  </ng-template>
+</p-dataList>

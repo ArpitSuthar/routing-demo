@@ -1,0 +1,29 @@
+<h2>Hero Detail</h2>
+<h3>
+  <i>FormControl in a FormGroup</i>
+</h3>
+<form [formGroup]="heroForm" novalidate>
+  <div>
+    <label>Name:
+      <input formControlName="name" />
+    </label>
+  </div>
+
+  <div>
+    <label for="alterEgo">Alter Ego:
+      <input type="text" id="alterEgo" formControlName="alterEgo" />
+    </label>
+  </div>
+
+  <div>
+    <label for="power">Hero Power:
+      <select id="power" formControlName="power">
+        <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+      </select>
+    </label>
+  </div>
+
+  <button pButton type="submit" [disabled]="!heroForm.valid">Submit</button>
+  <button pButton type="button" (click)="heroForm.reset()">New Hero</button>
+
+</form>
